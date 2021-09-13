@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Solution10 {
     public static void main(String[] args) {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat("#.00");
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the price of item 1: ");
         int price1 = input.nextInt();
@@ -19,12 +19,12 @@ public class Solution10 {
         int q3 = input.nextInt();
         //calculate subtotal
         double subtotal = (price1*q1) + (price2*q2) + (price3*q3);
-        System.out.printf("Subtotal: $%f\n", subtotal);
+        System.out.printf("Subtotal: $%s\n", df.format(subtotal));
         //calculate tax
         double tax = subtotal * 0.055;
-        System.out.printf("Tax: $%f\n", tax);
+        System.out.printf("Tax: $%s\n", df.format(tax));
         //calculate total
         double total = subtotal + tax;
-        System.out.printf("Total: $%f\n", total);
+        System.out.printf("Total: $%s\n", df.format(total));
     }
 }
